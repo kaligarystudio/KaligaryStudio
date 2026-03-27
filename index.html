@@ -1,153 +1,116 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaligary Studio | Invitaciones Web</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaligary Studio | Invitaciones Web</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-    <style>
-        :root {
-            --primary: #5A54E6;
-            --secondary: #7A5CFF;
-            --accent: #FFD166;
-            --dark: #2E2A8C;
-            --white: #ffffff;
-        }
+<style>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+:root {
+    --primary: #5A54E6;
+    --secondary: #7A5CFF;
+    --accent: #FFD166;
+    --white: #ffffff;
+}
 
-        body {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: var(--white);
-            text-align: center;
-        }
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-        /* 🔥 SECCIÓN LOGO */
-        .logo-section {
-            padding: 40px 20px;
-            background: rgba(255,255,255,0.05);
-        }
+body {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--white);
+    text-align: center;
+}
 
-        .logo-container {
-            display: inline-block;
-            background: white;
-            padding: 20px 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
+/* LOGO */
+.logo-section {
+    padding: 40px 20px;
+}
 
-        .logo-container img {
-            max-width: 280px;
-        }
+.logo-container {
+    display: inline-block;
+    background: white;
+    padding: 20px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
 
-        header {
-            padding: 30px 20px;
-        }
+.logo-container img {
+    max-width: 280px;
+}
 
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
+/* HEADER */
+header {
+    padding: 20px;
+}
 
-        .hero {
-            padding: 40px 20px;
-        }
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
 
-        .hero h2 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-            color: var(--accent);
-        }
+/* HERO */
+.hero {
+    padding: 40px 20px;
+}
 
-        .hero p {
-            max-width: 700px;
-            margin: auto;
-            line-height: 1.7;
-            font-size: 1.1rem;
-        }
+.hero h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: var(--accent);
+}
 
-        .cta-buttons {
-            margin-top: 35px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
+.hero p {
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.7;
+}
 
-        .btn {
-            padding: 15px 28px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
+/* BOTONES */
+.cta-buttons {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
 
-        .whatsapp {
-            background: #25D366;
-            color: white;
-        }
+.btn {
+    padding: 15px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
 
-        .facebook {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border: 2px solid var(--accent);
-            color: white;
-        }
+.whatsapp { background: #25D366; color: white; }
 
-        .instagram {
-            background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
-            color: white;
-        }
+.facebook {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border: 2px solid var(--accent);
+    color: white;
+}
 
-        .btn:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-        }
+.instagram {
+    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+    color: white;
+}
 
-        .features {
-            margin-top: 60px;
-            padding: 50px 20px;
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            margin-left: 20px;
-            margin-right: 20px;
-        }
+.btn:hover {
+    transform: translateY(-3px) scale(1.05);
+}
 
-        .features h3 {
-            font-size: 2rem;
-            margin-bottom: 25px;
-            color: var(--accent);
-        }
-
-        .features ul {
-            list-style: none;
-            max-width: 700px;
-            margin: auto;
-            text-align: left;
-        }
-
-        .features li {
-            margin: 15px 0;
-            font-size: 1.1rem;
-        }
-
-        footer {
-            margin-top: 50px;
-            padding: 20px;
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-
-        .bubbles-section {
+/* BURBUJAS */
+.bubbles-section {
     padding: 60px 20px;
 }
 
@@ -158,90 +121,119 @@
 }
 
 .bubbles-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: auto;
 }
 
-/* Base burbuja */
 .bubble {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 20px;
+
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    padding: 10px;
     font-weight: 600;
+    font-size: clamp(0.8rem, 1.2vw, 1rem);
+
     color: white;
     animation: float 4s ease-in-out infinite;
     box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
 
-/* 🎯 Formas por evento */
-
-/* Bodas */
+/* Formas */
 .boda {
-    width: 140px;
-    height: 100px;
     border-radius: 50% / 60%;
     background: linear-gradient(135deg, #8E7CFF, #5A54E6);
 }
 
-/* XV */
 .xv {
-    width: 130px;
-    height: 130px;
     border-radius: 50%;
     background: radial-gradient(circle, #FFD166, #7A5CFF);
 }
 
-/* Cumpleaños */
 .cumple {
-    width: 150px;
-    height: 150px;
     border-radius: 50%;
     background: linear-gradient(135deg, #FF7EB3, #FF758C);
 }
 
-/* Baby shower */
 .baby {
-    width: 160px;
-    height: 110px;
     border-radius: 60% 40% 60% 40%;
     background: linear-gradient(135deg, #A0E7E5, #B4F8C8);
     color: #333;
 }
 
-/* Revelación */
 .genero {
-    width: 160px;
-    height: 120px;
     border-radius: 50%;
     background: linear-gradient(135deg, #FFB6C1, #89CFF0);
 }
 
-/* Animación flotante */
+/* Animación */
 @keyframes float {
     0% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
+    50% { transform: translateY(-12px); }
     100% { transform: translateY(0px); }
 }
 
-/* Desfase animación */
-.boda { animation-delay: 0s; }
-.xv { animation-delay: 0.5s; }
-.cumple { animation-delay: 1s; }
-.baby { animation-delay: 1.5s; }
-.genero { animation-delay: 2s; }
-    </style>
+/* FEATURES */
+.features {
+    margin-top: 60px;
+    padding: 50px 20px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.features h3 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: var(--accent);
+}
+
+.features ul {
+    list-style: none;
+    max-width: 700px;
+    margin: auto;
+    text-align: left;
+}
+
+.features li {
+    margin: 15px 0;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .bubbles-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h2 {
+        font-size: 1.6rem;
+    }
+}
+
+</style>
 </head>
 
 <body>
 
-<!-- 🔥 LOGO DESTACADO -->
+<!-- LOGO -->
 <section class="logo-section">
     <div class="logo-container">
-        <img src="logo.jpeg" alt="Kaligary Studio">
+        <img src="logo.png" alt="Kaligary Studio">
     </div>
 </section>
 
@@ -249,10 +241,27 @@
     <p>Invitaciones Web que transmiten emoción</p>
 </header>
 
+<!-- HERO -->
 <section class="hero">
     <h2>Si lo piensas… es posible ✨</h2>
     <p>
-       <section class="bubbles-section">
+        Creamos experiencias digitales para bodas, XV años, cumpleaños, baby shower
+        y revelaciones de género.
+        <br><br>
+        No hacemos plantillas.
+        <br><br>
+        <strong>Hacemos emociones interactivas.</strong>
+    </p>
+
+    <div class="cta-buttons">
+        <a class="btn whatsapp" href="https://wa.me/525584831569" target="_blank">💬 WhatsApp</a>
+        <a class="btn facebook" href="https://www.facebook.com/share/1B7UabgiQm/" target="_blank">📘 Facebook</a>
+        <a class="btn instagram" href="https://www.instagram.com/kaligarystudio?igsh=NDlvNDMyNTkwY3pz" target="_blank">📸 Instagram</a>
+    </div>
+</section>
+
+<!-- BURBUJAS -->
+<section class="bubbles-section">
     <h3>Celebramos contigo cada momento</h3>
 
     <div class="bubbles-container">
@@ -260,48 +269,25 @@
         <div class="bubble xv">👑 XV Años</div>
         <div class="bubble cumple">🎂 Cumpleaños</div>
         <div class="bubble baby">🍼 Baby Shower</div>
-        <div class="bubble genero">🎉 Revelación de Género</div>
-    </div>
-</section>
-        <br><br>
-        Creemos que los sentimientos y la interacción humana son lo más importante.
-        No creamos simples invitaciones…
-        <br><br>
-        <strong>creamos experiencias digitales que se sienten.</strong>
-        <br><br>
-        🚀 No nos limitamos a plantillas.
-    </p>
-
-    <div class="cta-buttons">
-        <a class="btn whatsapp" href="https://wa.me/525584831569" target="_blank">
-            💬 Cotizar por WhatsApp
-        </a>
-
-        <a class="btn facebook" href="https://www.facebook.com/share/1B7UabgiQm/" target="_blank">
-            📘 Facebook
-        </a>
-
-        <a class="btn instagram" href="https://www.instagram.com/kaligarystudio?" target="_blank">
-            📸 Instagram
-        </a>
+        <div class="bubble genero">🎉 Revelación</div>
     </div>
 </section>
 
+<!-- FEATURES -->
 <section class="features">
     <h3>¿Qué hacemos?</h3>
     <ul>
-        <li>✨ Invitaciones web interactivas (mini sitios)</li>
+        <li>✨ Invitaciones web interactivas</li>
         <li>🎵 Música en cada invitación</li>
-        <li>📍 Ubicación, fecha y detalles del evento</li>
-        <li>✅ Confirmación de asistencia (RSVP)</li>
-        <li>📊 Gestión de invitados</li>
-        <li>🎥 Integración de imágenes y video</li>
-        <li>☁️ Espacio en la nube para fotos y videos del evento</li>
+        <li>📍 Ubicación y detalles del evento</li>
+        <li>✅ Confirmación de asistencia</li>
+        <li>🎥 Imágenes y video</li>
+        <li>☁️ Nube para fotos del evento</li>
     </ul>
 </section>
 
 <footer>
-    © 2026 Kaligary Studio — Todos los derechos reservados
+    © 2026 Kaligary Studio
 </footer>
 
 </body>
