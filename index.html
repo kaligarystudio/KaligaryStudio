@@ -30,6 +30,126 @@ body {
     text-align: center;
 }
 
+/* ===== MENÚ LATERAL ===== */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -320px;
+    width: 300px;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    backdrop-filter: blur(10px);
+    padding: 30px 20px;
+    transition: 0.4s ease;
+    z-index: 999;
+}
+
+.side-menu.active {
+    right: 0;
+}
+
+.menu-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    text-align: center;
+    color: var(--accent);
+    margin-bottom: 5px;
+}
+
+/* SUBTÍTULO */
+.menu-subtitle {
+    font-size: 0.85rem;
+    text-align: center;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+/* SEPARADOR */
+.menu-divider {
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    margin: 15px auto 25px;
+}
+.menu-item {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    margin: 30px auto;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ALMOHADILLA PRINCIPAL */
+.menu-item .pad {
+    position: absolute;
+    width: 110px;
+    height: 90px;
+    background: linear-gradient(135deg, #7A5CFF, #5A54E6);
+    border-radius: 50% 50% 45% 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.35);
+    transition: 0.3s;
+}
+
+/* DEDITOS */
+.menu-item .toe {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #7A5CFF, #5A54E6);
+    border-radius: 50%;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+/* POSICIÓN REALISTA DE DEDOS */
+.toe1 { top: 0; left: 20px; }
+.toe2 { top: -5px; left: 55px; }
+.toe3 { top: 0; right: 20px; }
+.toe4 { top: 20px; left: 45px; }
+
+/* HOVER = PISADA */
+.menu-item:hover .pad,
+.menu-item:hover .toe {
+    background: linear-gradient(135deg, #FFD166, #FF9F1C);
+    transform: scale(1.08);
+}
+
+/* ANIMACIÓN SUAVE */
+.menu-item {
+    animation: step 3s infinite ease-in-out;
+}
+
+@keyframes step {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+/* BOTÓN MENÚ */
+.menu-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--accent);
+    color: #000;
+    border: none;
+    font-size: 1.5rem;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+}
+
 /* LOGO */
 .logo-section {
     padding: 40px 20px;
@@ -132,52 +252,23 @@ header p {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-
     width: 100%;
     aspect-ratio: 1 / 1;
-
     padding: 10px;
     font-weight: 600;
-    font-size: clamp(0.8rem, 1.2vw, 1rem);
-
-    color: white;
     animation: float 4s ease-in-out infinite;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
 
-/* Formas */
-.boda {
-    border-radius: 50% / 60%;
-    background: linear-gradient(135deg, #8E7CFF, #5A54E6);
-}
+.boda { border-radius: 50% / 60%; background: linear-gradient(135deg, #8E7CFF, #5A54E6);}
+.xv { border-radius: 50%; background: radial-gradient(circle, #FFD166, #7A5CFF);}
+.cumple { border-radius: 50%; background: linear-gradient(135deg, #FF7EB3, #FF758C);}
+.baby { border-radius: 60% 40%; background: linear-gradient(135deg, #A0E7E5, #B4F8C8); color:#333;}
+.genero { border-radius: 50%; background: linear-gradient(135deg, #FFB6C1, #89CFF0);}
 
-.xv {
-    border-radius: 50%;
-    background: radial-gradient(circle, #FFD166, #7A5CFF);
-}
-
-.cumple {
-    border-radius: 50%;
-    background: linear-gradient(135deg, #FF7EB3, #FF758C);
-}
-
-.baby {
-    border-radius: 60% 40% 60% 40%;
-    background: linear-gradient(135deg, #A0E7E5, #B4F8C8);
-    color: #333;
-}
-
-.genero {
-    border-radius: 50%;
-    background: linear-gradient(135deg, #FFB6C1, #89CFF0);
-}
-
-/* Animación */
 @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-12px); }
-    100% { transform: translateY(0px); }
+    0% { transform: translateY(0px);}
+    50% { transform: translateY(-12px);}
+    100% { transform: translateY(0px);}
 }
 
 /* FEATURES */
@@ -190,45 +281,56 @@ header p {
     margin-right: 20px;
 }
 
-.features h3 {
-    font-size: 2rem;
-    margin-bottom: 25px;
-    color: var(--accent);
-}
-
-.features ul {
-    list-style: none;
-    max-width: 700px;
-    margin: auto;
-    text-align: left;
-}
-
-.features li {
-    margin: 15px 0;
-}
-
 /* FOOTER */
 footer {
     margin-top: 50px;
     padding: 20px;
-    font-size: 0.9rem;
-}
-
-/* RESPONSIVE */
-@media (max-width: 600px) {
-    .bubbles-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .hero h2 {
-        font-size: 1.6rem;
-    }
 }
 
 </style>
 </head>
 
 <body>
+
+<!-- BOTÓN -->
+<button class="menu-toggle" onclick="toggleMenu()">🐾</button>
+<!-- MENÚ -->
+<div class="side-menu" id="menu">
+ <div class="menu-title">🐾 Servicios Adicionales</div>
+    <div class="menu-subtitle">Complementa tu evento con experiencias únicas</div>
+    <div class="menu-divider"></div>
+<a class="menu-item" href="https://kaligarystudio.github.io/HeyJuly/" target="_blank">
+    <div class="toe toe1"></div>
+    <div class="toe toe2"></div>
+    <div class="toe toe3"></div>
+    <div class="toe toe4"></div>
+    <div class="pad">📢 Marketing Digital</div>
+</a>
+
+<a class="menu-item" href="https://wa.me/5215510922854" target="_blank">
+    <div class="toe toe1"></div>
+    <div class="toe toe2"></div>
+    <div class="toe toe3"></div>
+    <div class="toe toe4"></div>
+    <div class="pad">📸 Foto y Video</div>
+</a>
+
+<a class="menu-item" href="https://www.tiktok.com/@_.delicioussnack?_r=1&_t=ZS-953BwaCVcTl" target="_blank">
+    <div class="toe toe1"></div>
+    <div class="toe toe2"></div>
+    <div class="toe toe3"></div>
+    <div class="toe toe4"></div>
+    <div class="pad">🍿 Mesa Culiacán</div>
+</a>
+
+<a class="menu-item" href="productos.html">
+    <div class="toe toe1"></div>
+    <div class="toe toe2"></div>
+    <div class="toe toe3"></div>
+    <div class="toe toe4"></div>
+    <div class="pad">🌮 Productos Oaxaqueños</div>
+</a>
+</div>
 
 <!-- LOGO -->
 <section class="logo-section">
@@ -245,32 +347,32 @@ footer {
 <section class="hero">
     <h2>Si lo piensas… es posible ✨</h2>
     <p>
-        Creamos experiencias digitales para bodas, XV años, cumpleaños, baby shower
-        y revelaciones de género.
-        <br><br>
-        No hacemos plantillas.
-        <br><br>
-        <strong>Hacemos emociones interactivas.</strong>
-    </p>
-
-    <div class="cta-buttons">
-        <a class="btn whatsapp" href="https://wa.me/525584831569" target="_blank">💬 WhatsApp</a>
-        <a class="btn facebook" href="https://www.facebook.com/share/1B7UabgiQm/" target="_blank">📘 Facebook</a>
-        <a class="btn instagram" href="https://www.instagram.com/kaligarystudio?igsh=NDlvNDMyNTkwY3pz" target="_blank">📸 Instagram</a>
-    </div>
-</section>
-
-<!-- BURBUJAS -->
-<section class="bubbles-section">
-    <h3>Celebramos contigo cada momento</h3>
-
-    <div class="bubbles-container">
+        Creamos experiencias digitales para<br><br>
+   <div class="bubbles-container">
         <div class="bubble boda">💍 Bodas</div>
         <div class="bubble xv">👑 XV Años</div>
         <div class="bubble cumple">🎂 Cumpleaños</div>
         <div class="bubble baby">🍼 Baby Shower</div>
         <div class="bubble genero">🎉 Revelación</div>
     </div>
+        <br><br>
+        No hacemos plantillas.
+<br>
+        <strong>Hacemos emociones interactivas.</strong>
+    </p>
+
+    <div class="cta-buttons">
+        <a class="btn whatsapp" href="https://wa.me/525584831569" target="_blank">💬 WhatsApp</a>
+        <a class="btn facebook" href="https://www.facebook.com/share/1B7UabgiQm/" target="_blank">📘 Facebook</a>
+        <a class="btn instagram" href="https://www.instagram.com/kaligarystudio" target="_blank">📸 Instagram</a>
+    </div>
+</section>
+
+<!-- BURBUJAS (EVENTOS RESTAURADOS) -->
+<section class="bubbles-section">
+    <h3>Celebramos contigo cada momento</h3>
+
+ 
 </section>
 
 <!-- FEATURES -->
@@ -289,6 +391,12 @@ footer {
 <footer>
     © 2026 Kaligary Studio
 </footer>
+
+<script>
+function toggleMenu(){
+    document.getElementById("menu").classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
