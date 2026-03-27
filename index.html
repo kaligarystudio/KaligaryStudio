@@ -145,6 +145,94 @@
             font-size: 0.9rem;
             opacity: 0.8;
         }
+
+
+        .bubbles-section {
+    padding: 60px 20px;
+}
+
+.bubbles-section h3 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: var(--accent);
+}
+
+.bubbles-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+/* Base burbuja */
+.bubble {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    font-weight: 600;
+    color: white;
+    animation: float 4s ease-in-out infinite;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* 🎯 Formas por evento */
+
+/* Bodas */
+.boda {
+    width: 140px;
+    height: 100px;
+    border-radius: 50% / 60%;
+    background: linear-gradient(135deg, #8E7CFF, #5A54E6);
+}
+
+/* XV */
+.xv {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #FFD166, #7A5CFF);
+}
+
+/* Cumpleaños */
+.cumple {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FF7EB3, #FF758C);
+}
+
+/* Baby shower */
+.baby {
+    width: 160px;
+    height: 110px;
+    border-radius: 60% 40% 60% 40%;
+    background: linear-gradient(135deg, #A0E7E5, #B4F8C8);
+    color: #333;
+}
+
+/* Revelación */
+.genero {
+    width: 160px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFB6C1, #89CFF0);
+}
+
+/* Animación flotante */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Desfase animación */
+.boda { animation-delay: 0s; }
+.xv { animation-delay: 0.5s; }
+.cumple { animation-delay: 1s; }
+.baby { animation-delay: 1.5s; }
+.genero { animation-delay: 2s; }
     </style>
 </head>
 
@@ -164,8 +252,17 @@
 <section class="hero">
     <h2>Si lo piensas… es posible ✨</h2>
     <p>
-        En Kaligary Studio hacemos realidad la emoción de tus eventos: bodas, XV años,
-        cumpleaños, baby shower y revelaciones de género.
+       <section class="bubbles-section">
+    <h3>Celebramos contigo cada momento</h3>
+
+    <div class="bubbles-container">
+        <div class="bubble boda">💍 Bodas</div>
+        <div class="bubble xv">👑 XV Años</div>
+        <div class="bubble cumple">🎂 Cumpleaños</div>
+        <div class="bubble baby">🍼 Baby Shower</div>
+        <div class="bubble genero">🎉 Revelación de Género</div>
+    </div>
+</section>
         <br><br>
         Creemos que los sentimientos y la interacción humana son lo más importante.
         No creamos simples invitaciones…
