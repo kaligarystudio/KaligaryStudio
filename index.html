@@ -5,10 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaligary Studio | Invitaciones Web</title>
 
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
     <style>
+        :root {
+            --primary: #5A54E6;
+            --secondary: #7A5CFF;
+            --accent: #FFD166;
+            --dark: #2E2A8C;
+            --white: #ffffff;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -17,22 +24,34 @@
         }
 
         body {
-            background: linear-gradient(135deg, #6C63FF, #9C6BFF);
-            color: #fff;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
             text-align: center;
         }
 
-        header {
-            padding: 60px 20px 30px;
+        /* 🔥 SECCIÓN LOGO */
+        .logo-section {
+            padding: 40px 20px;
+            background: rgba(255,255,255,0.05);
         }
 
-        header h1 {
-            font-size: 3rem;
-            font-weight: 800;
+        .logo-container {
+            display: inline-block;
+            background: white;
+            padding: 20px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .logo-container img {
+            max-width: 280px;
+        }
+
+        header {
+            padding: 30px 20px;
         }
 
         header p {
-            margin-top: 15px;
             font-size: 1.2rem;
             opacity: 0.9;
         }
@@ -42,19 +61,20 @@
         }
 
         .hero h2 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin-bottom: 20px;
+            color: var(--accent);
         }
 
         .hero p {
             max-width: 700px;
             margin: auto;
-            line-height: 1.6;
+            line-height: 1.7;
             font-size: 1.1rem;
         }
 
         .cta-buttons {
-            margin-top: 30px;
+            margin-top: 35px;
             display: flex;
             justify-content: center;
             gap: 15px;
@@ -62,11 +82,12 @@
         }
 
         .btn {
-            padding: 15px 25px;
+            padding: 15px 28px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
             transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
         .whatsapp {
@@ -75,29 +96,35 @@
         }
 
         .facebook {
-            background: #1877F2;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: 2px solid var(--accent);
             color: white;
         }
 
         .instagram {
-            background: #E1306C;
+            background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
             color: white;
         }
 
         .btn:hover {
-            transform: scale(1.05);
-            opacity: 0.9;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
         }
 
         .features {
             margin-top: 60px;
-            padding: 40px 20px;
+            padding: 50px 20px;
             background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
         }
 
         .features h3 {
             font-size: 2rem;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            color: var(--accent);
         }
 
         .features ul {
@@ -118,32 +145,34 @@
             font-size: 0.9rem;
             opacity: 0.8;
         }
-
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 2.2rem;
-            }
-        }
     </style>
 </head>
 
 <body>
 
+<!-- 🔥 LOGO DESTACADO -->
+<section class="logo-section">
+    <div class="logo-container">
+        <img src="logo.png" alt="Kaligary Studio">
+    </div>
+</section>
+
 <header>
-    <h1>Kaligary Studio</h1>
     <p>Invitaciones Web que transmiten emoción</p>
 </header>
 
 <section class="hero">
-    <h2>Si lo puedes imaginar, lo podemos crear</h2>
+    <h2>Si lo piensas… es posible ✨</h2>
     <p>
         En Kaligary Studio hacemos realidad la emoción de tus eventos: bodas, XV años,
-        cumpleaños, baby shower, revelación de género y más.
+        cumpleaños, baby shower y revelaciones de género.
         <br><br>
         Creemos que los sentimientos y la interacción humana son lo más importante.
-        Por eso no creamos simples invitaciones… creamos experiencias digitales.
+        No creamos simples invitaciones…
         <br><br>
-        <strong>No nos limitamos a plantillas.</strong>
+        <strong>creamos experiencias digitales que se sienten.</strong>
+        <br><br>
+        🚀 No nos limitamos a plantillas.
     </p>
 
     <div class="cta-buttons">
@@ -165,12 +194,12 @@
     <h3>¿Qué hacemos?</h3>
     <ul>
         <li>✨ Invitaciones web interactivas (mini sitios)</li>
-        <li>🎵 Música integrada en cada invitación</li>
+        <li>🎵 Música en cada invitación</li>
         <li>📍 Ubicación, fecha y detalles del evento</li>
         <li>✅ Confirmación de asistencia (RSVP)</li>
         <li>📊 Gestión de invitados</li>
         <li>🎥 Integración de imágenes y video</li>
-        <li>☁️ Espacio para fotos y videos del evento</li>
+        <li>☁️ Espacio en la nube para fotos y videos del evento</li>
     </ul>
 </section>
 
