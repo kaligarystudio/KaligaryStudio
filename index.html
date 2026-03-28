@@ -5,9 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kaligary Studio | Invitaciones Web</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
-
 <style>
+
+/* ===== TIPOGRAFÍA IDENTIDAD ===== */
+@font-face {
+    font-family: 'Galyon';
+    src: url('fonts/Galyon-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Bunya';
+    src: url('fonts/Bunya-Regular.woff2') format('woff2');
+}
 
 :root {
     --primary: #5A54E6;
@@ -21,16 +30,25 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
 
 body {
+    font-family: 'Bunya', sans-serif;
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: var(--white);
     text-align: center;
 }
 
-/* ===== MENÚ LATERAL ===== */
+/* TITULOS CON IDENTIDAD */
+.menu-title,
+.hero h2,
+.bubbles-section h3,
+.features h3 {
+    font-family: 'Galyon', sans-serif;
+    letter-spacing: 1px;
+}
+
+/* MENÚ */
 .side-menu {
     position: fixed;
     top: 0;
@@ -44,104 +62,33 @@ body {
     z-index: 999;
 }
 
-.side-menu.active {
-    right: 0;
-}
+.side-menu.active { right: 0; }
 
 .menu-title {
     font-size: 1.6rem;
-    font-weight: 800;
-    text-align: center;
+    font-weight: 600;
     color: var(--accent);
-    margin-bottom: 5px;
 }
 
-/* SUBTÍTULO */
 .menu-subtitle {
     font-size: 0.85rem;
-    text-align: center;
     opacity: 0.8;
     margin-bottom: 20px;
 }
 
-/* SEPARADOR */
 .menu-divider {
     width: 60%;
     height: 2px;
     background: linear-gradient(90deg, transparent, var(--accent), transparent);
     margin: 15px auto 25px;
 }
-.menu-item {
-    position: relative;
-    width: 140px;
-    height: 140px;
-    margin: 30px auto;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-/* ALMOHADILLA PRINCIPAL */
-.menu-item .pad {
-    position: absolute;
-    width: 110px;
-    height: 90px;
-    background: linear-gradient(135deg, #7A5CFF, #5A54E6);
-    border-radius: 50% 50% 45% 45%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 10px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: white;
-    box-shadow: 0 12px 25px rgba(0,0,0,0.35);
-    transition: 0.3s;
-}
-
-/* DEDITOS */
-.menu-item .toe {
-    position: absolute;
-    width: 32px;
-    height: 32px;
-    background: linear-gradient(135deg, #7A5CFF, #5A54E6);
-    border-radius: 50%;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
-    transition: 0.3s;
-}
-
-/* POSICIÓN REALISTA DE DEDOS */
-.toe1 { top: 0; left: 20px; }
-.toe2 { top: -5px; left: 55px; }
-.toe3 { top: 0; right: 20px; }
-.toe4 { top: 20px; left: 45px; }
-
-/* HOVER = PISADA */
-.menu-item:hover .pad,
-.menu-item:hover .toe {
-    background: linear-gradient(135deg, #FFD166, #FF9F1C);
-    transform: scale(1.08);
-}
-
-/* ANIMACIÓN SUAVE */
-.menu-item {
-    animation: step 3s infinite ease-in-out;
-}
-
-@keyframes step {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
-}
-
-/* BOTÓN MENÚ */
+/* BOTÓN */
 .menu-toggle {
     position: fixed;
     top: 20px;
     right: 20px;
     background: var(--accent);
-    color: #000;
     border: none;
     font-size: 1.5rem;
     padding: 10px 15px;
@@ -156,25 +103,14 @@ body {
 }
 
 .logo-container {
-    display: inline-block;
     background: white;
-    padding: 20px 30px;
+    padding: 20px;
     border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    display: inline-block;
 }
 
 .logo-container img {
-    max-width: 280px;
-}
-
-/* HEADER */
-header {
-    padding: 20px;
-}
-
-header p {
-    font-size: 1.2rem;
-    opacity: 0.9;
+    max-width: 260px;
 }
 
 /* HERO */
@@ -184,7 +120,6 @@ header p {
 
 .hero h2 {
     font-size: 2.2rem;
-    margin-bottom: 20px;
     color: var(--accent);
 }
 
@@ -208,14 +143,11 @@ header p {
     border-radius: 30px;
     text-decoration: none;
     font-weight: 600;
-    transition: 0.3s;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 .whatsapp { background: #25D366; color: white; }
 
 .facebook {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
     border: 2px solid var(--accent);
     color: white;
 }
@@ -225,21 +157,7 @@ header p {
     color: white;
 }
 
-.btn:hover {
-    transform: translateY(-3px) scale(1.05);
-}
-
 /* BURBUJAS */
-.bubbles-section {
-    padding: 60px 20px;
-}
-
-.bubbles-section h3 {
-    font-size: 2rem;
-    margin-bottom: 40px;
-    color: var(--accent);
-}
-
 .bubbles-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -252,23 +170,21 @@ header p {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    padding: 10px;
+    aspect-ratio: 1;
     font-weight: 600;
     animation: float 4s ease-in-out infinite;
 }
 
-.boda { border-radius: 50% / 60%; background: linear-gradient(135deg, #8E7CFF, #5A54E6);}
-.xv { border-radius: 50%; background: radial-gradient(circle, #FFD166, #7A5CFF);}
-.cumple { border-radius: 50%; background: linear-gradient(135deg, #FF7EB3, #FF758C);}
-.baby { border-radius: 60% 40%; background: linear-gradient(135deg, #A0E7E5, #B4F8C8); color:#333;}
-.genero { border-radius: 50%; background: linear-gradient(135deg, #FFB6C1, #89CFF0);}
+.boda { border-radius: 50%; background: #5A54E6;}
+.xv { border-radius: 50%; background: #FFD166; color:#333;}
+.cumple { border-radius: 50%; background: #FF758C;}
+.baby { border-radius: 50%; background: #A0E7E5; color:#333;}
+.genero { border-radius: 50%; background: #FFB6C1;}
 
 @keyframes float {
-    0% { transform: translateY(0px);}
-    50% { transform: translateY(-12px);}
-    100% { transform: translateY(0px);}
+    0% { transform: translateY(0);}
+    50% { transform: translateY(-10px);}
+    100% { transform: translateY(0);}
 }
 
 /* FEATURES */
@@ -277,29 +193,22 @@ header p {
     padding: 50px 20px;
     background: rgba(255,255,255,0.1);
     border-radius: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
 }
+
 .features ul {
     list-style: none;
-    max-width: 650px;
-    margin: 0 auto;
-    padding: 0;
+    max-width: 600px;
+    margin: auto;
 }
 
 .features li {
-    background: rgba(255,255,255,0.08);
-    margin: 12px 0;
-    padding: 14px 18px;
-    border-radius: 14px;
-    backdrop-filter: blur(6px);
+    margin: 10px 0;
+    padding: 12px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
     text-align: left;
-
-    /* 🔥 CLAVE */
-    display: flex;
-    align-items: center;
-    gap: 10px;
 }
+
 /* FOOTER */
 footer {
     margin-top: 50px;
@@ -311,101 +220,51 @@ footer {
 
 <body>
 
-<!-- BOTÓN -->
 <button class="menu-toggle" onclick="toggleMenu()">🐾</button>
-<!-- MENÚ -->
+
 <div class="side-menu" id="menu">
- <div class="menu-title">🐾 Servicios Adicionales</div>
-    <div class="menu-subtitle">Complementa tu evento con experiencias únicas</div>
+    <div class="menu-title">Servicios Adicionales</div>
+    <div class="menu-subtitle">Complementa tu evento</div>
     <div class="menu-divider"></div>
-<a class="menu-item" href="https://kaligarystudio.github.io/HeyJuly/" target="_blank">
-    <div class="toe toe1"></div>
-    <div class="toe toe2"></div>
-    <div class="toe toe3"></div>
-    <div class="toe toe4"></div>
-    <div class="pad">📢 Marketing Digital</div>
-</a>
-
-<a class="menu-item" href="https://wa.me/5215510922854" target="_blank">
-    <div class="toe toe1"></div>
-    <div class="toe toe2"></div>
-    <div class="toe toe3"></div>
-    <div class="toe toe4"></div>
-    <div class="pad">📸 Foto y Video</div>
-</a>
-
-<a class="menu-item" href="https://www.tiktok.com/@_.delicioussnack?_r=1&_t=ZS-953BwaCVcTl" target="_blank">
-    <div class="toe toe1"></div>
-    <div class="toe toe2"></div>
-    <div class="toe toe3"></div>
-    <div class="toe toe4"></div>
-    <div class="pad">🍿 Mesa de Dulces (Solo en Culiacán)</div>
-</a>
-
-<!--<a class="menu-item" href="productos.html">
-    <div class="toe toe1"></div>
-    <div class="toe toe2"></div>
-    <div class="toe toe3"></div>
-    <div class="toe toe4"></div>
-    <div class="pad">🌮 Productos Oaxaqueños</div>
-</a> -->
 </div>
 
-<!-- LOGO -->
 <section class="logo-section">
     <div class="logo-container">
-        <img src="logo.jpeg" alt="Kaligary Studio">
+        <img src="logo.jpeg">
     </div>
 </section>
 
-<header>
-    <p>Invitaciones Web que transmiten emoción</p>
-</header>
-
-<!-- HERO -->
 <section class="hero">
     <h2>Si lo piensas… es posible ✨</h2>
-   <p>
-   Creamos experiencias digitales para
-</p>
 
-<div class="bubbles-container">
+    <p>Creamos experiencias digitales para</p>
+
+    <div class="bubbles-container">
         <div class="bubble boda">💍 Bodas</div>
-        <div class="bubble xv">👑 XV Años</div>
-        <div class="bubble cumple">🎂 Cumpleaños</div>
-        <div class="bubble baby">🍼 Baby Shower</div>
-        <div class="bubble genero">🎉 Revelación</div>
+        <div class="bubble xv">👑 XV</div>
+        <div class="bubble cumple">🎂 Cumple</div>
+        <div class="bubble baby">🍼 Baby</div>
+        <div class="bubble genero">🎉 Género</div>
     </div>
-        <br><br>
-        No hacemos plantillas.
-<br>
-        <strong>Hacemos emociones interactivas.</strong>
-    </p>
+
+    <p><strong>No hacemos plantillas. Hacemos emociones.</strong></p>
 
     <div class="cta-buttons">
-        <a class="btn whatsapp" href="https://wa.me/525584831569" target="_blank">💬 WhatsApp</a>
-        <a class="btn facebook" href="https://www.facebook.com/share/1B7UabgiQm/" target="_blank">📘 Facebook</a>
-        <a class="btn instagram" href="https://www.instagram.com/kaligarystudio" target="_blank">📸 Instagram</a>
+        <a class="btn whatsapp" href="#">WhatsApp</a>
+        <a class="btn facebook" href="#">Facebook</a>
+        <a class="btn instagram" href="#">Instagram</a>
     </div>
 </section>
 
-<!-- BURBUJAS (EVENTOS RESTAURADOS) -->
-<section class="bubbles-section">
-    <h3>Celebramos contigo cada momento</h3>
-
- 
-</section>
-
-<!-- FEATURES -->
 <section class="features">
     <h3>¿Qué hacemos?</h3>
     <ul>
         <li>✨ Invitaciones web interactivas</li>
-        <li>🎵 Música en cada invitación</li>
-        <li>📍 Ubicación y detalles del evento</li>
-        <li>✅ Confirmación de asistencia</li>
-        <li>🎥 Imágenes y video</li>
-        <li>☁️ Nube para fotos del evento</li>
+        <li>🎵 Música</li>
+        <li>📍 Ubicación</li>
+        <li>✅ Confirmación</li>
+        <li>🎥 Video</li>
+        <li>☁️ Nube de fotos</li>
     </ul>
 </section>
 
