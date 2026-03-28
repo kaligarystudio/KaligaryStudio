@@ -32,6 +32,7 @@
     box-sizing: border-box;
 }
 
+/* BASE */
 body {
     font-family: 'Bunya', sans-serif;
     background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -39,7 +40,7 @@ body {
     text-align: center;
 }
 
-/* TITULOS CON IDENTIDAD */
+/* TITULOS */
 .menu-title,
 .hero h2,
 .bubbles-section h3,
@@ -48,7 +49,7 @@ body {
     letter-spacing: 1px;
 }
 
-/* MENÚ */
+/* ===== MENÚ LATERAL ===== */
 .side-menu {
     position: fixed;
     top: 0;
@@ -83,6 +84,58 @@ body {
     margin: 15px auto 25px;
 }
 
+/* ITEM MENÚ (PATITA) */
+.menu-item {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    animation: step 3s infinite ease-in-out;
+}
+
+.menu-item .pad {
+    position: absolute;
+    width: 110px;
+    height: 90px;
+    background: linear-gradient(135deg, #7A5CFF, #5A54E6);
+    border-radius: 50% 50% 45% 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: 0.75rem;
+    color: white;
+    transition: 0.3s;
+}
+
+.menu-item .toe {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #7A5CFF, #5A54E6);
+    border-radius: 50%;
+}
+
+.toe1 { top: 0; left: 20px; }
+.toe2 { top: -5px; left: 55px; }
+.toe3 { top: 0; right: 20px; }
+.toe4 { top: 20px; left: 45px; }
+
+.menu-item:hover .pad,
+.menu-item:hover .toe {
+    background: linear-gradient(135deg, #FFD166, #FF9F1C);
+    transform: scale(1.08);
+}
+
+@keyframes step {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
 /* BOTÓN */
 .menu-toggle {
     position: fixed;
@@ -94,29 +147,21 @@ body {
     padding: 10px 15px;
     border-radius: 50%;
     cursor: pointer;
-    z-index: 1000;
 }
 
 /* LOGO */
-.logo-section {
-    padding: 40px 20px;
-}
+.logo-section { padding: 40px 20px; }
 
 .logo-container {
     background: white;
-    padding: 20px;
+    padding: 20px 30px;
     border-radius: 20px;
-    display: inline-block;
 }
 
-.logo-container img {
-    max-width: 260px;
-}
+.logo-container img { max-width: 280px; }
 
 /* HERO */
-.hero {
-    padding: 40px 20px;
-}
+.hero { padding: 40px 20px; }
 
 .hero h2 {
     font-size: 2.2rem;
@@ -143,19 +188,14 @@ body {
     border-radius: 30px;
     text-decoration: none;
     font-weight: 600;
+    transition: 0.3s;
 }
 
 .whatsapp { background: #25D366; color: white; }
+.facebook { border: 2px solid var(--accent); color: white; }
+.instagram { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); color: white; }
 
-.facebook {
-    border: 2px solid var(--accent);
-    color: white;
-}
-
-.instagram {
-    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
-    color: white;
-}
+.btn:hover { transform: scale(1.05); }
 
 /* BURBUJAS */
 .bubbles-container {
@@ -175,15 +215,15 @@ body {
     animation: float 4s ease-in-out infinite;
 }
 
-.boda { border-radius: 50%; background: #5A54E6;}
-.xv { border-radius: 50%; background: #FFD166; color:#333;}
-.cumple { border-radius: 50%; background: #FF758C;}
-.baby { border-radius: 50%; background: #A0E7E5; color:#333;}
-.genero { border-radius: 50%; background: #FFB6C1;}
+.boda { border-radius: 50% / 60%; background: linear-gradient(135deg, #8E7CFF, #5A54E6);}
+.xv { border-radius: 50%; background: radial-gradient(circle, #FFD166, #7A5CFF);}
+.cumple { border-radius: 50%; background: linear-gradient(135deg, #FF7EB3, #FF758C);}
+.baby { border-radius: 60% 40%; background: linear-gradient(135deg, #A0E7E5, #B4F8C8); color:#333;}
+.genero { border-radius: 50%; background: linear-gradient(135deg, #FFB6C1, #89CFF0);}
 
 @keyframes float {
     0% { transform: translateY(0);}
-    50% { transform: translateY(-10px);}
+    50% { transform: translateY(-12px);}
     100% { transform: translateY(0);}
 }
 
@@ -195,25 +235,17 @@ body {
     border-radius: 20px;
 }
 
-.features ul {
-    list-style: none;
-    max-width: 600px;
-    margin: auto;
-}
-
 .features li {
-    margin: 10px 0;
-    padding: 12px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 10px;
-    text-align: left;
+    margin: 12px 0;
+    padding: 14px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 14px;
+    display: flex;
+    gap: 10px;
 }
 
 /* FOOTER */
-footer {
-    margin-top: 50px;
-    padding: 20px;
-}
+footer { margin-top: 50px; padding: 20px; }
 
 </style>
 </head>
@@ -223,9 +255,17 @@ footer {
 <button class="menu-toggle" onclick="toggleMenu()">🐾</button>
 
 <div class="side-menu" id="menu">
-    <div class="menu-title">Servicios Adicionales</div>
+    <div class="menu-title">🐾 Servicios Adicionales</div>
     <div class="menu-subtitle">Complementa tu evento</div>
     <div class="menu-divider"></div>
+
+    <a class="menu-item" href="#">
+        <div class="toe toe1"></div>
+        <div class="toe toe2"></div>
+        <div class="toe toe3"></div>
+        <div class="toe toe4"></div>
+        <div class="pad">📢 Marketing</div>
+    </a>
 </div>
 
 <section class="logo-section">
@@ -241,19 +281,13 @@ footer {
 
     <div class="bubbles-container">
         <div class="bubble boda">💍 Bodas</div>
-        <div class="bubble xv">👑 XV</div>
-        <div class="bubble cumple">🎂 Cumple</div>
-        <div class="bubble baby">🍼 Baby</div>
-        <div class="bubble genero">🎉 Género</div>
+        <div class="bubble xv">👑 XV Años</div>
+        <div class="bubble cumple">🎂 Cumpleaños</div>
+        <div class="bubble baby">🍼 Baby Shower</div>
+        <div class="bubble genero">🎉 Revelación</div>
     </div>
 
-    <p><strong>No hacemos plantillas. Hacemos emociones.</strong></p>
-
-    <div class="cta-buttons">
-        <a class="btn whatsapp" href="#">WhatsApp</a>
-        <a class="btn facebook" href="#">Facebook</a>
-        <a class="btn instagram" href="#">Instagram</a>
-    </div>
+    <p><strong>No hacemos plantillas. Hacemos emociones interactivas.</strong></p>
 </section>
 
 <section class="features">
@@ -263,14 +297,10 @@ footer {
         <li>🎵 Música</li>
         <li>📍 Ubicación</li>
         <li>✅ Confirmación</li>
-        <li>🎥 Video</li>
-        <li>☁️ Nube de fotos</li>
     </ul>
 </section>
 
-<footer>
-    © 2026 Kaligary Studio
-</footer>
+<footer>© 2026 Kaligary Studio</footer>
 
 <script>
 function toggleMenu(){
