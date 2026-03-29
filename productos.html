@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Productos Oaxaqueños | Kaligary Studio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<style>
+
+/* ===== HERO ===== */
+.products-hero {
+    padding: 60px 20px 30px;
+    text-align: center;
+}
+
+.products-hero h1 {
+    font-size: 2.2rem;
+    color: var(--accent);
+}
+
+.products-hero p {
+    opacity: 0.9;
+    margin-top: 10px;
+}
+
+/* ===== GRID ===== */
+.products-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+/* ===== CARD ===== */
+.product-card {
+    background: rgba(255,255,255,0.08);
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.product-card:hover {
+    transform: translateY(-6px) scale(1.02);
+}
+
+/* IMAGEN */
+.product-img {
+    width: 100%;
+    height: 180px;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* CONTENIDO */
+.product-content {
+    padding: 15px;
+    text-align: left;
+}
+
+.product-content h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.price {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+/* SECCIONES */
+.category-title {
+    grid-column: 1 / -1;
+    font-size: 1.4rem;
+    margin-top: 30px;
+    color: var(--accent);
+    text-align: center;
+}
+
+/* FOOTER */
+.products-footer {
+    text-align: center;
+    margin: 40px 0;
+    opacity: 0.9;
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="products-hero">
+    <h1>🌾 Productos de Tlaxiaco, Oaxaca</h1>
+    <p>Tradición, sabor y calidad directo a tu mesa</p>
+</section>
+
+<section class="products-container">
+
+    <div class="category-title">🥖 Pan Tradicional</div>
+
+    <div class="product-card">
+        <div class="product-img">Imagen aquí</div>
+        <div class="product-content">
+            <h3>Cemitas (azúcar o panela)</h3>
+            <div class="price">$80 (10 pz)</div>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <div class="product-img">Imagen aquí</div>
+        <div class="product-content">
+            <h3>Pan de yema (bolsa)</h3>
+            <div class="price">$90 (10 pz)</div>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <div class="product-img">Imagen aquí</div>
+        <div class="product-content">
+            <h3>Pan tipo concha</h3>
+            <div class="price">$90 (10 pz)</div>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <div class="product-img">Imagen aquí</div>
+        <div class="product-content">
+            <h3>Pan payaso</h3>
+            <div class="price">$90 (10 pz)</div>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <div class="product-img">Imagen aquí</div>
+        <div class="product-content">
+            <h3>Pan de yema chico</h3>
+            <div class="price">$35 pieza</div>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <div class="product-img">Imagen aquí</div>
+        <div class="product-content">
+            <h3>Pan de yema mediano</h3>
+            <div class="price">$70 pieza</div>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <div class="product-img">Imagen aquí</div>
+        <div class="product-content">
+            <h3>Pan de yema grande</h3>
+            <div class="price">$150 pieza</div>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <div class="product-img">Imagen aquí</div>
+        <div class="product-content">
+            <h3>Pan de yema familiar</h3>
+            <div class="price">$250</div>
+        </div>
+    </div>
+
+    <div class="category-title">🌶️ Especialidades</div>
+
+    <div class="product-card">
+        <div class="product-img">Imagen aquí</div>
+        <div class="product-content">
+            <h3>Mole negro</h3>
+            <div class="price">$300 / kg</div>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <div class="product-img">Imagen aquí</div>
+        <div class="product-content">
+            <h3>Cecina</h3>
+            <div class="price">$310 / kg</div>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <div class="product-img">Imagen aquí</div>
+        <div class="product-content">
+            <h3>Chorizo</h3>
+            <div class="price">$310 / kg</div>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <div class="product-img">Imagen aquí</div>
+        <div class="product-content">
+            <h3>Tasajo</h3>
+            <div class="price">$380 / kg</div>
+        </div>
+    </div>
+
+    <div class="category-title">🧀 Lácteos</div>
+
+    <div class="product-card">
+        <div class="product-img">Imagen aquí</div>
+        <div class="product-content">
+            <h3>Queso</h3>
+            <div class="price">$80 (250g) / $160 (500g)</div>
+        </div>
+    </div>
+
+    <div class="category-title">🍬 Dulces Típicos</div>
+
+    <div class="product-card">
+        <div class="product-img">Imagen aquí</div>
+        <div class="product-content">
+            <h3>Empanadas, polvorones, buñuelos, torrejas, caballitos</h3>
+            <div class="price">$12 por pieza</div>
+        </div>
+    </div>
+
+    <div class="category-title">🍶 Bebidas</div>
+
+    <div class="product-card">
+        <div class="product-img">Imagen aquí</div>
+        <div class="product-content">
+            <h3>Compuesto de aguardiente</h3>
+            <div class="price">750ml $250 | 500ml $200 | 250ml $150</div>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <div class="product-img">Imagen aquí</div>
+        <div class="product-content">
+            <h3>Chocolate en polvo Chocomío</h3>
+            <div class="price">$220</div>
+        </div>
+    </div>
+
+</section>
+
+<div class="products-footer">
+    <p>✨ Pregunta por más productos disponibles</p>
+</div>
+
+</body>
+</html>
