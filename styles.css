@@ -1,4 +1,3 @@
-<style>
 :root {
     --primary: #5A54E6;
     --secondary: #7A5CFF; 
@@ -376,4 +375,3 @@ footer {
 .menu-item:nth-child(even) .paw {
     transform: rotate(6deg);
 }
-</style>
